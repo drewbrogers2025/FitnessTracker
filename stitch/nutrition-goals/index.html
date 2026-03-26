@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nutrition Engine | Kinetic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#4a5e00",
+                        "surface-tint": "#f3ffca",
+                        "secondary-container": "#ab3600",
+                        "primary": "#f3ffca",
+                        "error": "#ff7351",
+                        "outline-variant": "#474845",
+                        "on-primary": "#516700",
+                        "surface-dim": "#0d0f0c",
+                        "on-error-container": "#ffd2c8",
+                        "on-error": "#450900",
+                        "primary-fixed-dim": "#beee00",
+                        "on-tertiary-fixed-variant": "#685900",
+                        "secondary-fixed": "#ffc4b1",
+                        "on-surface-variant": "#ababa6",
+                        "on-background": "#fdfcf7",
+                        "tertiary-dim": "#edd13a",
+                        "outline": "#757671",
+                        "tertiary-fixed": "#fce047",
+                        "surface-container-high": "#1e201c",
+                        "tertiary": "#ffeea5",
+                        "surface": "#0d0f0c",
+                        "on-secondary-fixed-variant": "#932d00",
+                        "on-secondary-container": "#fff6f3",
+                        "background": "#0d0f0c",
+                        "secondary-fixed-dim": "#ffb197",
+                        "tertiary-fixed-dim": "#edd13a",
+                        "primary-fixed": "#cafd00",
+                        "inverse-surface": "#fafaf4",
+                        "surface-container-lowest": "#000000",
+                        "error-dim": "#d53d18",
+                        "secondary-dim": "#ff7441",
+                        "on-secondary": "#410f00",
+                        "on-secondary-fixed": "#631b00",
+                        "surface-variant": "#242722",
+                        "surface-container": "#181a17",
+                        "on-tertiary": "#665800",
+                        "inverse-primary": "#516700",
+                        "primary-dim": "#beee00",
+                        "secondary": "#ff7441",
+                        "on-tertiary-fixed": "#483d00",
+                        "on-surface": "#fdfcf7",
+                        "surface-container-highest": "#242722",
+                        "primary-container": "#cafd00",
+                        "on-primary-fixed-variant": "#526900",
+                        "on-primary-fixed": "#3a4a00",
+                        "tertiary-container": "#fce047",
+                        "on-tertiary-container": "#5d5000",
+                        "error-container": "#b92902",
+                        "surface-container-low": "#121411",
+                        "inverse-on-surface": "#545652",
+                        "surface-bright": "#2a2d28"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(202, 253, 0, 0.05) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(255, 116, 65, 0.05) 0px, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-[#0d0f0c] dark:bg-[#0d0f0c] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#CCFF00]" data-icon="menu">menu</span>
+<h1 class="text-xl font-black italic text-[#fdfcf7] tracking-tighter">NUTRITION ENGINE</h1>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border border-primary/20">
+<img class="h-full w-full object-cover" data-alt="portrait of a focused professional athlete with dramatic cinematic lighting against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3z9Rai3F7tOHlioiZ0bGCPrYCGSweVJpC1qFYTE8xF2eDpKjNYFebQ-ymhCZE7EFhGsfPjcA0d_Qht7JBFG9wrxlLHUKFXMQaPAi8jK0i18dIL_xm8Jm8Us1bjwegoomuK5TG8VjwD36Me81xbpBGdJpnBbyhtUQ6HXFhPfwYtHAU7nr_z6QCVCXf3DAPEK2Z5Cun7-zlmIfI8hQHid8cRjlMK9e-ATm1foECUI1AahM_tCE-Aj4FHtf2rkdy0s4exYZ1x7QFUGU"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-24 pb-32 px-6 bg-mesh">
+<!-- Hero: Daily Calorie Target -->
+<section class="mb-10">
+<div class="flex flex-col gap-2 mb-6">
+<span class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary/60">Performance Phase</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight">Fuel your Elite Status.</h2>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-8 border border-[#fdfcf7]/10">
+<div class="absolute top-0 right-0 -mt-8 -mr-8 h-32 w-32 bg-secondary/10 blur-3xl rounded-full"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<p class="font-headline text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-1">Daily Calorie Target</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-6xl font-black text-secondary tracking-tighter">2,850</span>
+<span class="font-headline text-xl font-bold text-on-surface-variant italic">kcal</span>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container font-headline font-bold px-8 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+                        SET TARGET
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Macros & Hydration -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Macronutrient Breakdown -->
+<section class="bg-surface-container-high rounded-xl p-6 border border-[#fdfcf7]/10 flex flex-col gap-8">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-lg font-bold tracking-tight">MACRONUTRIENTS</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="tune">tune</span>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Protein -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-label text-xs font-bold tracking-widest uppercase text-on-surface">Protein</span>
+</div>
+<span class="font-headline text-sm font-bold">214g <span class="text-on-surface-variant font-normal">/ 30%</span></span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-dim to-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+<!-- Carbs -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label text-xs font-bold tracking-widest uppercase text-on-surface">Carbs</span>
+</div>
+<span class="font-headline text-sm font-bold">356g <span class="text-on-surface-variant font-normal">/ 50%</span></span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary-dim to-secondary w-[60%] rounded-full"></div>
+</div>
+</div>
+<!-- Fats -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="font-label text-xs font-bold tracking-widest uppercase text-on-surface">Fats</span>
+</div>
+<span class="font-headline text-sm font-bold">63g <span class="text-on-surface-variant font-normal">/ 20%</span></span>
+</div>
+<div class="h-3 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-on-surface-variant w-[45%] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hydration Goals -->
+<section class="bg-surface-container-high rounded-xl p-6 border border-[#fdfcf7]/10 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline text-lg font-bold tracking-tight uppercase">Hydration</h3>
+<div class="px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="text-[10px] font-black text-primary uppercase tracking-widest">Optimal</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-12 py-4">
+<button class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center hover:bg-surface-variant active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<div class="text-center">
+<div class="font-headline text-6xl font-black text-on-surface tracking-tighter">3.5</div>
+<div class="font-headline text-sm font-bold text-on-surface-variant uppercase tracking-widest">Liters / Day</div>
+</div>
+<button class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center hover:bg-surface-variant active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<div class="flex justify-between items-center pt-8 border-t border-outline-variant/30">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="material-symbols-outlined text-primary" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="material-symbols-outlined text-primary" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="material-symbols-outlined text-primary/20" data-icon="water_drop">water_drop</span>
+<span class="material-symbols-outlined text-primary/20" data-icon="water_drop">water_drop</span>
+</div>
+<span class="font-label text-[10px] font-black text-on-surface-variant uppercase tracking-widest">750ml per glass</span>
+</div>
+</section>
+</div>
+<!-- Micronutrient Insights -->
+<section class="mt-6 rounded-xl overflow-hidden relative group h-48">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="overhead shot of a vibrant healthy mediterranean meal with fresh greens, seeds, and protein on a dark slate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl7CaqshQDwhOpJjucgqb0I9DOXrRUqyp0NsT_Yvm1XUK84E20GXUr6_iY7eK2TmsmfiQfSnhRGpqQWzwSurjVoYMHf8xMgSjcldZ9mOs_k4OM3K5vyLKy3zVTAwTMtdREIE9dxwNyvj7-MdBxchLXqs3wPEq5ZdaeVib9BC6sid2WqPqhQR-fjco_HIv4Q4zr_xscbV3KqHM9SWpoiGDQm3fvEeNpI1Oopm-ufZs3_EyoD_Cifbjd7y7L3H2WXZJoQuhgFglU_rE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h4 class="font-headline text-xl font-black text-on-surface italic mb-1">MICRONUTRIENT SYNC</h4>
+<p class="text-on-surface-variant text-sm max-w-xs">Your magnesium levels are 12% below baseline. Focus on leafy greens today.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#121411]/70 dark:bg-[#121411]/70 backdrop-blur-xl border-t border-[#fdfcf7]/10 shadow-[0_-4px_24px_rgba(204,255,0,0.08)]">
+<div class="flex flex-col items-center justify-center text-[#fdfcf7]/50 px-5 py-2 hover:text-[#fdfcf7] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-headline text-[10px] font-bold tracking-[0.05em] mt-1">DASHBOARD</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#CCFF00] text-[#0d0f0c] rounded-2xl px-5 py-2 scale-105 active:scale-90 duration-200 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<span class="font-headline text-[10px] font-bold tracking-[0.05em] mt-1">FUEL</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#fdfcf7]/50 px-5 py-2 hover:text-[#fdfcf7] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-headline text-[10px] font-bold tracking-[0.05em] mt-1">TRAIN</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#fdfcf7]/50 px-5 py-2 hover:text-[#fdfcf7] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-headline text-[10px] font-bold tracking-[0.05em] mt-1">BODY</span>
+</div>
+</nav>
+</body></html>

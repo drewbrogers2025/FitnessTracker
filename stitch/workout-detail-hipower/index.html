@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workout Detail - High-Intensity Power</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#ababa6",
+                        "inverse-primary": "#516700",
+                        "inverse-on-surface": "#545652",
+                        "primary-fixed-dim": "#beee00",
+                        "surface-tint": "#f3ffca",
+                        "on-tertiary-container": "#5d5000",
+                        "secondary-fixed-dim": "#ffb197",
+                        "on-secondary": "#410f00",
+                        "tertiary": "#ffeea5",
+                        "on-tertiary-fixed": "#483d00",
+                        "inverse-surface": "#fafaf4",
+                        "on-tertiary": "#665800",
+                        "on-surface": "#fdfcf7",
+                        "primary-container": "#cafd00",
+                        "outline-variant": "#474845",
+                        "tertiary-container": "#fce047",
+                        "on-primary": "#516700",
+                        "tertiary-dim": "#edd13a",
+                        "on-primary-fixed-variant": "#526900",
+                        "on-background": "#fdfcf7",
+                        "on-error-container": "#ffd2c8",
+                        "on-error": "#450900",
+                        "surface-variant": "#242722",
+                        "on-secondary-fixed": "#631b00",
+                        "surface-container-lowest": "#000000",
+                        "surface": "#0d0f0c",
+                        "primary-fixed": "#cafd00",
+                        "surface-container-highest": "#242722",
+                        "error-dim": "#d53d18",
+                        "error": "#ff7351",
+                        "surface-dim": "#0d0f0c",
+                        "secondary-container": "#ab3600",
+                        "error-container": "#b92902",
+                        "background": "#0d0f0c",
+                        "primary-dim": "#beee00",
+                        "secondary-dim": "#ff7441",
+                        "outline": "#757671",
+                        "secondary-fixed": "#ffc4b1",
+                        "on-secondary-container": "#fff6f3",
+                        "secondary": "#ff7441",
+                        "on-primary-container": "#4a5e00",
+                        "surface-container-high": "#1e201c",
+                        "surface-container": "#181a17",
+                        "surface-container-low": "#121411",
+                        "on-secondary-fixed-variant": "#932d00",
+                        "tertiary-fixed-dim": "#edd13a",
+                        "primary": "#f3ffca",
+                        "tertiary-fixed": "#fce047",
+                        "surface-bright": "#2a2d28",
+                        "on-tertiary-fixed-variant": "#685900",
+                        "on-primary-fixed": "#3a4a00"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0d0f0c;
+            color: #fdfcf7;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl flex items-center justify-between px-6 h-16 w-full no-border bg-[#121411]">
+<div class="flex items-center gap-4">
+<button class="text-[#fdfcf7] hover:bg-[#2a2d28] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tighter uppercase text-[#CCFF00]">WORKOUT_DETAIL</h1>
+</div>
+<div class="text-xl font-black text-[#fdfcf7] uppercase italic">KINETIC</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative h-[397px] w-full overflow-hidden">
+<img alt="Workout Hero" class="w-full h-full object-cover" data-alt="Intense athlete lifting heavy barbell in a dark industrial gym with dramatic moody lighting and lens flare highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkVCouVkliIp02K6HndBlvVcTaPO3Godg_NjN4v2ofXncU3vFRYfh6E8NfynfDhEuniYt3Vx8rkB3k7cHgjPQsz454s91lox7Xw72tGRN-HOeIg0Y7hkUOVVYiD5qjkshX71QiJQECZ84k4mhYfoBJa4UpeNc728tEJZjlfEehfViWCT210MoIA7WsF-N_qz1dwD9bb9Pbfai0G1Vq9ALoK9iO6BP6gLsDOfbeE2KC-THUOkowI-zYxkWMnygAy_4yTS3LJUdAbUU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="max-w-4xl mx-auto">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-black tracking-[0.2em] uppercase rounded-full mb-4">POWER PHASE</span>
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter uppercase mb-4 leading-none">High-Intensity Power</h2>
+<p class="font-body text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                        A high-octane session designed to build explosive strength and metabolic conditioning.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Row -->
+<section class="px-6 -mt-8 relative z-10">
+<div class="max-w-4xl mx-auto grid grid-cols-3 gap-1 bg-surface-container-high rounded-xl overflow-hidden shadow-2xl">
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center">
+<span class="font-headline text-3xl font-black text-primary-fixed">45</span>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Minutes</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center">
+<span class="font-headline text-3xl font-black text-primary-fixed">8</span>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Exercises</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col items-center justify-center text-center">
+<span class="font-headline text-2xl font-black text-secondary uppercase">High</span>
+<span class="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Intensity</span>
+</div>
+</div>
+</section>
+<!-- Exercise Breakdown -->
+<section class="px-6 mt-12 mb-20">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-xl font-bold tracking-tight uppercase">Movement Breakdown</h3>
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">Target: Hypertrophy</span>
+</div>
+<div class="space-y-4">
+<!-- Exercise 1 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors p-6 rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-bright flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl">fitness_center</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg font-bold uppercase tracking-tight">Barbell Squats</h4>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-wide mt-1">4 Sets <span class="mx-2 text-outline">•</span> 8-10 Reps</p>
+</div>
+<div class="text-right">
+<span class="font-headline text-2xl font-black text-primary italic">80KG</span>
+</div>
+</div>
+<!-- Exercise 2 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors p-6 rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-bright flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg font-bold uppercase tracking-tight">Power Cleans</h4>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-wide mt-1">5 Sets <span class="mx-2 text-outline">•</span> 5 Reps</p>
+</div>
+<div class="text-right">
+<span class="font-headline text-2xl font-black text-primary italic">60KG</span>
+</div>
+</div>
+<!-- Exercise 3 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors p-6 rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-bright flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl">keyboard_double_arrow_up</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg font-bold uppercase tracking-tight">Box Jumps</h4>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-wide mt-1">3 Sets <span class="mx-2 text-outline">•</span> 12 Reps</p>
+</div>
+<div class="text-right">
+<span class="font-headline text-xl font-black text-on-surface uppercase italic tracking-tighter">30" BOX</span>
+</div>
+</div>
+<!-- Exercise 4 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-colors p-6 rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-lg bg-surface-bright flex items-center justify-center border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-3xl">fitbit_aerobics</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg font-bold uppercase tracking-tight">Burpees</h4>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-wide mt-1">3 Sets <span class="mx-2 text-outline">•</span> 15 Reps</p>
+</div>
+<div class="text-right">
+<span class="font-headline text-xl font-black text-on-surface uppercase italic tracking-tighter">MAX EFFORT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Button (Floating above nav) -->
+<div class="fixed bottom-24 left-0 w-full px-6 pointer-events-none">
+<div class="max-w-4xl mx-auto flex justify-center">
+<button class="pointer-events-auto w-full md:w-auto md:min-w-[320px] bg-primary-container text-on-primary-container py-5 px-12 rounded-full font-headline font-black text-xl uppercase tracking-widest shadow-[0_12px_40px_rgba(204,255,0,0.3)] hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    START WORKOUT
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-[#0d0f0c]/80 backdrop-blur-lg flex justify-around items-center px-4 pb-6 pt-2 w-full no-border shadow-[0_-8px_24px_rgba(204,255,0,0.05)]">
+<a class="flex flex-col items-center justify-center bg-[#CCFF00] text-[#0d0f0c] rounded-full p-3 scale-110 -translate-y-2 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-extrabold tracking-widest uppercase mt-1">TRAIN</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#fdfcf7]/60 p-2 hover:text-[#CCFF00] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-extrabold tracking-widest uppercase mt-1">STATS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#fdfcf7]/60 p-2 hover:text-[#CCFF00] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-extrabold tracking-widest uppercase mt-1">EXPLORE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#fdfcf7]/60 p-2 hover:text-[#CCFF00] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-extrabold tracking-widest uppercase mt-1">PROFILE</span>
+</a>
+</nav>
+</body></html>
